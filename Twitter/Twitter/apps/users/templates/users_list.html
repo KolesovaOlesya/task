@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<form>
+    <h1>Users</h1>
+    <ul>
+        {% for user in object_list %}
+            <li><a href="{{ user.id }}/">{{ user.first_name }} {{ user.last_name }}</a> ({{ user.posts.count }})</li>
+        {% endfor %}
+    </ul>
+</form>
+</body>
+</html>

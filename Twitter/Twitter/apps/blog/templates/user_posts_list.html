@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<form>
+    <h1>User posts</h1>
+    <ul>
+        {% for post in object_list %}
+            {{ post.pub_date }}
+            <li>{{ post.message }} </li>
+            <br>
+        {% endfor %}
+    </ul>
+</form>
+</body>
+</html>

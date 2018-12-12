@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form>
+    {% if user.is_authenticated %}
+        <a href="user/logout/">Logout({{ user.username }})</a><br>
+        <a href="users/">Users</a><br>
+        <a href="create/">Add post</a>
+        <h1>My posts</h1>
+        <ul>
+            {% for post in object_list %}
+                {{ post.pub_date }}
+                <li>{{ post.message }} </li>
+                <br>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <a href="user/register/">Registration</a><br>
+        <a href="user/login/">Login</a>
+    {% endif %}
+</form>
+</body>
+</html>
